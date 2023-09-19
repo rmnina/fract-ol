@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 17:48:41 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/16 17:44:03 by jdufour          ###   ########.fr       */
+/*   Created: 2023/09/19 17:53:39 by jdufour           #+#    #+#             */
+/*   Updated: 2023/09/19 21:19:48 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <X11/keysym.h>
 # include <stdlib.h>
+# include "libft/libft.h"
 
 # define KEY_UP 65362
 # define KEY_DOWN 65364
@@ -35,28 +36,41 @@ typedef struct s_complex {
     double  imag;
 } t_complex;
 
-typedef struct s_data {
-    void                *img;
-    char                *addr;
-    void                *mlx_ptr;
-    void                *mlx_win;
-    int                 bits_per_pixel;
-    int                 line_length;
-    int                 endian;
+typedef struct s_img {
+    void    *img;
+    char    *addr;
+    void    *mlx_ptr;
+    void    *mlx_win;
+    int     bits_per_pixel;
+    int     line_length;
+    int     endian;
+} t_img;
+
+typedef struct s_fractals {
+    int                 iterations;
+    int                 max_iterations;
+    double              x;
+    double              y;
     double              min_x;
     double              max_x;
     double              min_y;
     double              max_y;
-    struct s_complex    complex;
-} t_data;
+    double              med_x;
+    double              med_y;
+    struct s_img        img;
+    struct s_complex    julia_complex;
+    int                (*fract)(struct s_fractals *fractal);
+} t_fractals;
 
-void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int     ft_rainbow(int iterations);
-int     handle_input(int keysym, t_data *data, int max_iterations, t_complex c);
-int     handle_no_event(t_data *img, t_complex c);
-int     handle_moves(int keysym, t_data *data);
-int     handle_up_down_moves(int keysym, t_data *data);
-int     handle_left_right_moves(int keysym, t_data *data);
-void    draw_julia_set(t_data *data, int max_iterations, t_complex c);
+int     julia_iterations(t_fractals *fractal);
+int     mandelbrot_iterations(t_fractals *fractal);
+int     pick_fractal(char **argv, t_fractals *fractal);
+void    draw_fractal(t_img *img, t_fractals *fractal);
+int     ft_color(t_fractals *fractal);
+int     handle_input(int keysym, t_fractals *fractal);
+int     handle_no_event(t_img *img);
+void    my_mlx_pixel_put(t_img *img, int x, int y, int color);
+int     is_julia(char *argv);
+int     is_mandelbrot(char *argv);
 
 #endif
