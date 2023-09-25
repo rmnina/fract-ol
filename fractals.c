@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:41:30 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/19 21:13:22 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/21 19:40:03 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,12 @@ int mandelbrot_iterations(t_fractals *fractal)
     return (fractal->iterations);
 }
 
-int pick_fractal(char **argv, t_fractals *fractal)
-{   
-    if (is_julia(argv[1]))
-        fractal->fract = julia_iterations;
-    if (is_mandelbrot(argv[1]))
-        fractal->fract = mandelbrot_iterations;
-    return (0);
-}
-
-void draw_fractal(t_img *img, t_fractals *fractal)
+void draw_fractal(t_fractals *fractal)
 {
-    int     color;
     int     x;
     int     y;
 
     y = 0;
-    printf("addr %p\n", fractal->fract);
     while (y < HEIGHT)
     {
         x = 0;
@@ -76,13 +65,13 @@ void draw_fractal(t_img *img, t_fractals *fractal)
         {
             fractal->x = fractal->min_x + (fractal->max_x - fractal->min_x) * x / (WIDTH);
             fractal->y = fractal->min_y + (fractal->max_y - fractal->min_y) * y / (HEIGHT);
-            fractal->fract(fractal);
-            my_mlx_pixel_put(img, x, y, ft_color(fractal));
+            ft_getorcalculate(fractal, x, y);
+            my_mlx_pixel_put(&fractal->img, x, y, ft_color(fractal));
             x++;
         }
         y++;
     }
-    mlx_put_image_to_window(img->mlx_ptr, img->mlx_win, img->img, fractal->min_x, fractal->min_y);
+    mlx_put_image_to_window(fractal->img.mlx_ptr, fractal->img.mlx_win, fractal->img.img, fractal->min_x, fractal->min_y);
 }
 
 int ft_color(t_fractals *fractal)
