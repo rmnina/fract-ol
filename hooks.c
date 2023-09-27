@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:37:05 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 03:23:17 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 20:02:26 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int	moves(int keysym, t_fractals *fractal)
 int	change_julia(int keysym, t_fractals *fractal)
 {
 	if (keysym == KEY_Z)
-		fractal->julia_complex.real += 0.05;
+		fractal->julia_complex.real += 0.005;
 	else if (keysym == KEY_S)
-		fractal->julia_complex.real -= 0.05;
+		fractal->julia_complex.real -= 0.005;
 	else if (keysym == KEY_Q)
-		fractal->julia_complex.imag -= 0.05;
+		fractal->julia_complex.imag -= 0.005;
 	else if (keysym == KEY_D)
-		fractal->julia_complex.imag += 0.05;
+		fractal->julia_complex.imag += 0.005;
 	// if (fractal->fract == julia_iterations)
 	// 	printf("Julia set : %f + %fi\n", fractal->julia_complex.real, fractal->julia_complex.imag);
 	return (0);
@@ -70,8 +70,13 @@ int	handle_input(int keysym, t_fractals *fractal)
 		destroy_and_free(fractal);
 		exit(0);
 	}
+	else if (keysym == PAD_9 && fractal->max_iterations < 400)
+		fractal->max_iterations += 50;
+	else if (keysym == PAD_6 && fractal->max_iterations > 50)
+		fractal->max_iterations -= 50;
 	moves(keysym, fractal);
 	change_julia(keysym, fractal);
+	color_set(keysym, fractal);
 	draw_fractal(fractal);
 	return (0);
 }
@@ -82,14 +87,14 @@ int	handle_mouse(int event, int x, int y, t_fractals *fractal)
 	(void)y;
 	fractal->med_x = (fractal->max_x - fractal->min_x);
     fractal->med_y = (fractal->max_y - fractal->min_y);
-	if (event == MOUSE_UP)
+	if (event == MOUSE_DOWN)
 	{
 		fractal->max_x += fractal->med_x * 0.2;
 		fractal->min_x -= fractal->med_x * 0.2;
 		fractal->max_y += fractal->med_y * 0.2;
 		fractal->min_y -= fractal->med_y * 0.2;
 	}
-	else if (event == MOUSE_DOWN)
+	else if (event == MOUSE_UP)
 	{
 		fractal->max_x -= fractal->med_x * 0.2;
 		fractal->min_x += fractal->med_x * 0.2;
@@ -97,15 +102,5 @@ int	handle_mouse(int event, int x, int y, t_fractals *fractal)
 		fractal->min_y += fractal->med_y * 0.2;
 	}
 	draw_fractal(fractal);
-	// if (fractal->move == false)
-	// {
-	// 	ft_free_cache(fractal->cache, WIDTH);
-	// 	create_cache(WIDTH, HEIGHT);
-	// 	fractal->move = true;
-	// }
-	// else
-	// 	update_cache(fractal);
 	return (0);
 }
-
-// int handle_mouse(int event, t_fractal *fractal)

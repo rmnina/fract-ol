@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:41:30 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 03:20:55 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 18:26:34 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int draw_fractal(t_fractals *fractal)
         {
             fractal->x = fractal->min_x + (fractal->max_x - fractal->min_x) * x / (WIDTH);
 			fractal->y = fractal->min_y + (fractal->max_y - fractal->min_y) * y / (HEIGHT);
-			fractal->iterations = fractal->fract(fractal);
+			fractal->fract(fractal);
             my_mlx_pixel_put(&fractal->img, x, y, ft_color(fractal));
             x++;
         }
@@ -109,8 +109,8 @@ int ft_color(t_fractals *fractal)
     
     if (fractal->iterations == fractal->max_iterations)
         return (0x00111111);
-    rgb[0] = sin(0.11 * fractal->iterations + 6) * 125 + 126;
-	rgb[1] = sin(0.11 * fractal->iterations + 7) * 125 + 126;
-	rgb[2] = sin(0.11 * fractal->iterations + 8) * 125 + 126;
+    rgb[0] = sin(0.11 * fractal->iterations + fractal->color_B) * 125 + 126;
+	rgb[1] = sin(0.11 * fractal->iterations + fractal->color_G) * 125 + 126;
+	rgb[2] = sin(0.11 * fractal->iterations + fractal->color_R) * 125 + 126;
 	return (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 }

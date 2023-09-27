@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:53:39 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 03:01:49 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 18:29:41 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@
 # define PAD_7 65429
 # define PAD_8 65431
 # define PAD_9 65434
+# define PAD_0 65438
 
-# define WIDTH 1200
-# define HEIGHT 800
+# define WIDTH 1500
+# define HEIGHT 1000
 # define ZOOM_FACTOR 1.15
 
 typedef struct s_complex {
@@ -66,10 +67,9 @@ typedef struct s_fractals {
 	int					iterations;
 	int					max_iterations;
 	int					mouse_pos;
-	int					color;
-	int					color_a;
-	int					color_b;
-	int					color_c;
+	int					color_B;
+	int					color_G;
+	int					color_R;
 	double				x;
 	double				y;
 	double				min_x;
@@ -115,5 +115,6 @@ void		update_cache_after_move(t_fractals *fractal);
 void		ft_free_cache(int **cache, int width);
 
 void		ft_fractol_man(void);
+int			color_set(int keysym, t_fractals *fractal);
 
 #endif

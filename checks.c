@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:54:53 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 02:04:25 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 18:02:49 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_isdigits(char *str)
 int is_julia(char **argv)
 {
     if (argv [1] && (ft_strncmp(argv[1], "Julia", 6) == 0 || ft_strncmp(argv[1], "julia", 5) == 0))
-        return (1);
+		return (1);
     return (0);
 }
 

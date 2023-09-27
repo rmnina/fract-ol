@@ -6,7 +6,7 @@
 #    By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 02:01:12 by jdufour           #+#    #+#              #
-#    Updated: 2023/09/27 02:17:47 by jdufour          ###   ########.fr        #
+#    Updated: 2023/09/27 18:11:03 by jdufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,13 +45,13 @@ ${NAME}: ${OBJS}
 	
 clean:
 	${RM} ${OBJS}
-	make clean -C ../minilibx-linux
-	make clean -C libft
+	# make clean -C ../minilibx-linux
+	# make clean -C libft
 
 fclean: clean
 	${RM} ${NAME}
-	make fclean -C libft
-	make fclean -C minilibx-linux
+	# make fclean -C libft
+	# make fclean -C minilibx-linux
 
 re: fclean all
 
