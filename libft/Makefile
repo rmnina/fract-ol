@@ -6,7 +6,7 @@
 #    By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 12:01:53 by jdufour           #+#    #+#              #
-#    Updated: 2023/09/27 02:03:27 by jdufour          ###   ########.fr        #
+#    Updated: 2023/09/28 00:17:46 by jdufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ ft_itoa.c\
 ft_strtrim.c\
 ft_printf.c\
 ft_format.c\
+ft_isalldigits.c\
+ft_error.c\
 
 SRCS_BONUS = ft_lstadd_front.c\
 	    ft_lstadd_back.c\

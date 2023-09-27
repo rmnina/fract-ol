@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:53:39 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 18:29:41 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:51:02 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,11 @@ typedef struct s_img {
 typedef struct s_fractals {
 	int					iterations;
 	int					max_iterations;
-	int					mouse_pos;
-	int					color_B;
-	int					color_G;
-	int					color_R;
+	int					color_RB;
+	int					color_GPi;
+	int					color_YPu;
+	double				center_x;
+	double				center_y;			
 	double				x;
 	double				y;
 	double				min_x;
@@ -77,44 +78,48 @@ typedef struct s_fractals {
 	double				min_y;
 	double				max_y;
 	double				med_x;
-	double				med_y;
-	bool				move;	
+	double				med_y;	
 	struct s_img		img;
 	struct s_complex	julia_complex;
-	int					**cache;
 	int					(*fract)(struct s_fractals *fractal);
 }						t_fractals;
 
+// Img and init
+void		my_mlx_pixel_put(t_img *img, int x, int y, int color);
+void		init_fract(int argc, char **argv, t_fractals *fractal);
+void		init_img(t_fractals *fractal);
+void		init_julia_val(int argc, char **argv, t_fractals *fractal);
+
 //	Fractals
+int			pick_fractal(int argc, char **argv, t_fractals *fractal);
+
+	// Calculate
 int			julia_iterations(t_fractals *fractal);
 int			mandelbrot_iterations(t_fractals *fractal);
-int			pick_fractal(int argc, char **argv, t_fractals *fractal);
+int			burning_ship_iterations(t_fractals *fractal);
+int			mandelbar_iterations(t_fractals *fractal);
+
+	// Draw
 int			draw_fractal(t_fractals *fractal);
 int			ft_color(t_fractals *fractal);
-void		my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int			is_julia(char **argv);
-int			is_mandelbrot(char **argv);
 
 //	Events
 int			handle_input(int keysym, t_fractals *fractal);
 int			handle_mouse(int event, int x, int y, t_fractals *fractal);
-int			handle_no_event();
 int			destroy_and_free(t_fractals *fractal);
+int			moves(int keysym, t_fractals *fractal);
+int			change_julia(int keysym, t_fractals *fractal);
 
 //	Checks
-void		ft_error(void);
 void		ft_error_arg(void);
-int			ft_isdigits(char *str);
+int			is_julia(char **argv);
+int			is_mandelbrot(char **argv);
+int			is_burningship(char **argv);
+int			is_mandelbar(char **argv);
 
-// Opti
-int			**create_cache(int width, int height);
-int			ft_isincache(t_fractals *fractal, int x, int y);
-int			ft_getorcalculate(t_fractals *fractal, int x, int y);
-void		update_cache(t_fractals *fractal);
-void		update_cache_after_move(t_fractals *fractal);
-void		ft_free_cache(int **cache, int width);
-
+// Utils
 void		ft_fractol_man(void);
 int			color_set(int keysym, t_fractals *fractal);
+
 
 #endif

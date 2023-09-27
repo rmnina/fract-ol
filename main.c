@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:34:29 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 19:55:39 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:50:16 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,31 @@ void my_mlx_pixel_put(t_img *img, int x, int y, int color)
 
 void    init_fract(int argc, char **argv, t_fractals *fractal)
 {
-    fractal->color_B = 12;
-    fractal->color_G = 11;
-    fractal->color_R = 15;
+    fractal->max_iterations = 50;
+    fractal->color_RB = 12;
+    fractal->color_GPi = 11;
+    fractal->color_YPu = 15;
     pick_fractal(argc, argv, fractal);
-    fractal->min_x = -2.0;
-    fractal->max_x = 2.0;
-    fractal->min_y = -1.5;
-    fractal->max_y = 1.5;
+    fractal->min_x = -2.5;
+    fractal->max_x = 2.5;
+    fractal->min_y = -2.0;
+    fractal->max_y = 2.0;
     fractal->med_x = (fractal->max_x - fractal->min_x);
     fractal->med_y = (fractal->max_y - fractal->min_y);
-    fractal->max_iterations = 100;
+}
+
+void	init_julia_val(int argc, char **argv, t_fractals *fractal)
+{
+	if (argc == 4 && (ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
+	{
+		fractal->julia_complex.real = ft_atod(argv[2]);
+		fractal->julia_complex.imag = ft_atod(argv[3]);
+	}
+	else if (argc == 2)
+	{
+		fractal->julia_complex.real = -1;
+		fractal->julia_complex.imag = 0;
+	}
 }
 
 void    init_img(t_fractals *fractal)
@@ -64,9 +78,9 @@ int main(int argc, char **argv)
     
     if (is_julia(argv) && (argc != 2 && argc != 4))
         ft_error_arg();
-    else if (is_mandelbrot(argv) && (argc != 2))
+    else if ((is_mandelbrot(argv) || is_burningship(argv) || is_mandelbar(argv)) && (argc != 2))
         ft_error_arg();
-    if (!is_julia(argv) && !is_mandelbrot(argv))
+    if (!is_julia(argv) && !is_mandelbrot(argv) && !is_burningship(argv) && !is_mandelbar(argv))
         ft_error_arg();
     else
     {
@@ -76,6 +90,7 @@ int main(int argc, char **argv)
         mlx_mouse_hook(fractal.img.mlx_win, &handle_mouse, &fractal);
         mlx_key_hook(fractal.img.mlx_win, &handle_input, &fractal);
         mlx_hook(fractal.img.mlx_win, 17, 1L << 17, &destroy_and_free, &fractal);
+        // mlx_hook(fractal.img.mlx_win, 6, 1L << 6, &handle_mouse, &fractal);
         draw_fractal(&fractal);
         mlx_expose_hook(fractal.img.mlx_win, draw_fractal, &fractal);
         mlx_loop(fractal.img.mlx_ptr);

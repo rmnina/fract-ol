@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:14:00 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/27 02:03:12 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:18:12 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	        choose_format(char *format, va_list args);
 int         ft_putstr(char *s);
 int         ft_putchar(char c);
 int         ft_putnbr(int n);
+int			ft_isalldigits(const char *str);
+void		ft_error(void);
 
 
 #endif
