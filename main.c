@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:34:29 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/21 19:42:15 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 03:21:34 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void my_mlx_pixel_put(t_img *img, int x, int y, int color)
 
 void    init_fract(int argc, char **argv, t_fractals *fractal)
 {
+    // fractal->color_a = 6;
+    // fractal->color_b = 7;
+    // fractal->color_c = 8;
     pick_fractal(argc, argv, fractal);
     fractal->min_x = -2.0;
     fractal->max_x = 2.0;
@@ -29,8 +32,7 @@ void    init_fract(int argc, char **argv, t_fractals *fractal)
     fractal->max_y = 1.5;
     fractal->med_x = (fractal->max_x - fractal->min_x);
     fractal->med_y = (fractal->max_y - fractal->min_y);
-    fractal->max_iterations = 100;
-    fractal->cache = create_cache(WIDTH, HEIGHT);
+    fractal->max_iterations = 150;
 }
 
 void    init_img(t_fractals *fractal)
@@ -68,13 +70,17 @@ int main(int argc, char **argv)
         ft_error_arg();
     else
     {
+        // ft_fractol_man();
         init_fract(argc, argv, &fractal);
+        // ft_printf("color a %d\n", fractal.color_a);
+        // ft_printf("color b %d\n", fractal.color_b);
+        // ft_printf("color c %d\n", fractal.color_c);
         init_img(&fractal);
         mlx_mouse_hook(fractal.img.mlx_win, &handle_mouse, &fractal);
         mlx_key_hook(fractal.img.mlx_win, &handle_input, &fractal);
-        mlx_hook(fractal.img.mlx_win, 17, 0, &destroy_and_free, &fractal);
-        mlx_loop_hook(fractal.img.mlx_ptr, &handle_no_event, &fractal);
+        mlx_hook(fractal.img.mlx_win, 17, 1L << 17, &destroy_and_free, &fractal);
         draw_fractal(&fractal);
+        mlx_expose_hook(fractal.img.mlx_win, draw_fractal, &fractal);
         mlx_loop(fractal.img.mlx_ptr);
     }
     return (0);

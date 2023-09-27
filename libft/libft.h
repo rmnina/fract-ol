@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:14:00 by jdufour           #+#    #+#             */
-/*   Updated: 2023/07/13 23:04:23 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/27 02:03:12 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 
 typedef struct s_list
 {
-    void           *content;
-    struct s_list  *next;
+	void           *content;
+	struct s_list  *next;
 
 }                   t_list;  
 
@@ -54,6 +54,7 @@ void	    *ft_memchr(const void *s, int c, size_t n);
 int		    ft_memcmp(const void *s1, const void *s2, size_t n);
 char	    *ft_strnstr(const char *big, const char *little, size_t len);
 long int	ft_atoi(const char *str);
+double		ft_atod(const char *str);
 void	    *ft_calloc(size_t nmemb, size_t size);
 char	    *ft_strdup(char *src);
 char	    *ft_substr(const char *s, unsigned int start, size_t len);

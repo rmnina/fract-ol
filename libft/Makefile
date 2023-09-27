@@ -6,7 +6,7 @@
 #    By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 12:01:53 by jdufour           #+#    #+#              #
-#    Updated: 2023/07/21 19:37:28 by jdufour          ###   ########.fr        #
+#    Updated: 2023/09/27 02:03:27 by jdufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ ft_strlcpy.c\
 ft_strnstr.c\
 ft_toupper.c\
 ft_atoi.c\
+ft_atod.c\
 ft_isalpha.c\
 ft_memchr.c\
 ft_memset.c\
