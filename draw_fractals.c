@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:41:30 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 00:24:58 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:59:25 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int ft_color(t_fractals *fractal)
     
     if (fractal->iterations == fractal->max_iterations)
         return (0x00111111);
-    rgb[0] = sin(0.11 * fractal->iterations + fractal->color_RB) * 125 + 126;
-	rgb[1] = sin(0.11 * fractal->iterations + fractal->color_GPi) * 125 + 126;
-	rgb[2] = sin(0.11 * fractal->iterations + fractal->color_YPu) * 125 + 126;
+    rgb[0] = sin(0.2 * fractal->iterations + fractal->color_RB) * 125 + 126;
+	rgb[1] = sin(0.2 * fractal->iterations + fractal->color_GPi) * 125 + 126;
+	rgb[2] = sin(0.2 * fractal->iterations + fractal->color_YPu) * 125 + 126;
 	return (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 }
