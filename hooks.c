@@ -6,17 +6,17 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:37:05 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 00:46:16 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 19:00:35 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 int	destroy_and_free(t_fractals *fractal)
 {
 	mlx_destroy_image(fractal->img.mlx_ptr, fractal->img.img);
 	mlx_destroy_window(fractal->img.mlx_ptr, fractal->img.mlx_win);
-	mlx_destroy_display(fractal->img.mlx_ptr); 
+	mlx_destroy_display(fractal->img.mlx_ptr);
 	free(fractal->img.mlx_ptr);
 	exit(0);
 }
@@ -24,7 +24,7 @@ int	destroy_and_free(t_fractals *fractal)
 int	moves(int keysym, t_fractals *fractal)
 {
 	fractal->med_x = (fractal->max_x - fractal->min_x);
-    fractal->med_y = (fractal->max_y - fractal->min_y);
+	fractal->med_y = (fractal->max_y - fractal->min_y);
 	if (keysym == KEY_UP)
 	{
 		fractal->max_y -= fractal->med_y * 0.05;
@@ -82,23 +82,13 @@ int	handle_input(int keysym, t_fractals *fractal)
 int	handle_mouse(int event, int x, int y, t_fractals *fractal)
 {
 	fractal->med_x = (fractal->max_x - fractal->min_x);
-    fractal->med_y = (fractal->max_y - fractal->min_y);
+	fractal->med_y = (fractal->max_y - fractal->min_y);
 	fractal->center_x = fractal->min_x + ((double)x / WIDTH) * fractal->med_x;
 	fractal->center_y = fractal->min_y + ((double)y / HEIGHT) * fractal->med_y;
 	if (event == MOUSE_DOWN)
-	{
-		fractal->min_x = fractal->center_x - fractal->med_x * (1 + 0.2) * ((double)x / WIDTH);
-		fractal->max_x = fractal->center_x + fractal->med_x * (1 + 0.2) * (1 - (double)x / WIDTH);
-		fractal->min_y = fractal->center_y - fractal->med_y * (1 + 0.2) * ((double)y / HEIGHT);
-		fractal->max_y = fractal->center_y + fractal->med_y * (1 + 0.2) * (1 - (double)y / HEIGHT);
-	}
+		mouse_down(fractal, x, y);
 	else if (event == MOUSE_UP)
-	{
-		fractal->min_x = fractal->center_x - fractal->med_x / (1 + 0.2) * ((double)x / WIDTH);
-		fractal->max_x = fractal->center_x + fractal->med_x / (1 + 0.2) * (1 - ((double)x / WIDTH));
-		fractal->min_y = fractal->center_y - fractal->med_y / (1 + 0.2) * ((double)y / HEIGHT);
-		fractal->max_y = fractal->center_y + fractal->med_y / (1 + 0.2) * (1 - ((double)y / HEIGHT));
-	}
+		mouse_up(fractal, x, y);
 	draw_fractal(fractal);
 	return (0);
 }
