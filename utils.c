@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 02:06:15 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:01:59 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 19:10:21 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_fractol_man(void)
 {
 	ft_printf(" \n\t---👾👾😏--- Welcome on my fract-ol ---😏👾👾--- \n\tYou can use the following options :\n\
 	⬆ ➡  Move the camera with the directional arrows\n\t🖱 🖱  Zoom in and out with the mouse scroller\n\
-	🌌🎆 Change the Julia equation :\n\t\t- Z to raise and S to lower the real part\n\
-	\t- D to raise and Q tower the imaginary part\n\t⌨🔢 Change the colors with the numeric pad: \n\
+	🌌🎆 Change the Julia equation :\n\t\t- W to raise and S to lower the real part\n\
+	\t- D to raise and A tower the imaginary part\n\t⌨🔢 Change the colors with the numeric pad: \n\
 	\t- 1 to lower and 2 to raise the blues and reds 🔵🔴\n\
 	\t- 4 to lower and 5 to raise the greens and pinks 🟢🧶\n\
 	\t- 7 to lower and 8 to raise the purples and yellows 🟣🟡\n\

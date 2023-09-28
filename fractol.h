@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:53:39 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:01:59 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 19:09:49 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@
 # define KEY_ESC 65307
 # define MOUSE_UP 4
 # define MOUSE_DOWN 5
-# define KEY_Z 122
+# define KEY_W 119
 # define KEY_S 115
-# define KEY_Q 113
+# define KEY_A 97
 # define KEY_D 100
 
 # define PAD_1 65436

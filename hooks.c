@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:37:05 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:00:35 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/09/28 19:11:11 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int	moves(int keysym, t_fractals *fractal)
 
 int	change_julia(int keysym, t_fractals *fractal)
 {
-	if (keysym == KEY_Z)
+	if (keysym == KEY_W)
 		fractal->julia_complex.real += 0.005;
 	else if (keysym == KEY_S)
 		fractal->julia_complex.real -= 0.005;
-	else if (keysym == KEY_Q)
+	else if (keysym == KEY_A)
 		fractal->julia_complex.imag -= 0.005;
 	else if (keysym == KEY_D)
 		fractal->julia_complex.imag += 0.005;
