@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:34:29 by jdufour           #+#    #+#             */
-/*   Updated: 2023/10/02 13:09:07 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:46:59 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	init_fract(int argc, char **argv, t_fractals *fractal)
 
 void	init_julia_val(int argc, char **argv, t_fractals *fractal)
 {
-	// ft_error_julia(argc, argv);
 	if (argc == 4 && (ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
 	{
 		fractal->julia_complex.real = ft_atod(argv[2]);
@@ -47,7 +46,7 @@ void	init_julia_val(int argc, char **argv, t_fractals *fractal)
 	{
 		fractal->julia_complex.real = -1;
 		fractal->julia_complex.imag = 0;
-	}		
+	}
 }
 
 void	init_img(t_fractals *fractal)
@@ -80,7 +79,7 @@ int	main(int argc, char **argv)
 {
 	t_fractals	fractal;
 
-	if (is_julia(argv) && (argc != 2 && argc != 4))
+	if (is_julia(argv) && !(ft_error_julia(argc, argv)))
 		ft_error_arg();
 	else if ((is_mandelbrot(argv) || is_burningship(argv) || \
 	is_mandelbar(argv)) && (argc != 2))

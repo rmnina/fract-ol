@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:13:22 by jdufour           #+#    #+#             */
-/*   Updated: 2023/05/02 12:28:58 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:02:36 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main()
     //int *tab = {1, 2, 3};
     char    array[5] = "salut";
     ft_bzero(array, 5);
-    printf("test %s\n", array);
+    ("test %s\n", array);
 }
 */
