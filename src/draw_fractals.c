@@ -6,11 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:41:30 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:01:59 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:36:18 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	pick_fractal(int argc, char **argv, t_fractals *fractal)
 {

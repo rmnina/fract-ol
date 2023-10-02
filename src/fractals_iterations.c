@@ -6,11 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 00:21:01 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:00:41 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:36:22 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	julia_iterations(t_fractals *fractal)
 {

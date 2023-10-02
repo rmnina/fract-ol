@@ -6,15 +6,15 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 19:35:07 by jdufour           #+#    #+#             */
-/*   Updated: 2023/07/12 20:54:09 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:15:37 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list  *last;
+	t_list	*last;
 
 	if (!new)
 		return ;

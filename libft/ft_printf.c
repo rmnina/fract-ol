@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 00:02:47 by jdufour           #+#    #+#             */
-/*   Updated: 2023/07/12 20:18:30 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:17:16 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_putadr(unsigned long n)
 
 	hex = "0123456789abcdef";
 	size = 0;
-
 	if (!n)
 	{
 		size = ft_putstr(PTR_NULL);
@@ -35,7 +34,7 @@ int	ft_putadr(unsigned long n)
 
 int	choose_format(char *format, va_list args)
 {
-	int		size;
+	int				size;
 	unsigned long	p;
 
 	size = 0;

@@ -6,11 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:34:29 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:23:01 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:09:07 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
@@ -37,6 +37,7 @@ void	init_fract(int argc, char **argv, t_fractals *fractal)
 
 void	init_julia_val(int argc, char **argv, t_fractals *fractal)
 {
+	// ft_error_julia(argc, argv);
 	if (argc == 4 && (ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
 	{
 		fractal->julia_complex.real = ft_atod(argv[2]);
@@ -46,7 +47,7 @@ void	init_julia_val(int argc, char **argv, t_fractals *fractal)
 	{
 		fractal->julia_complex.real = -1;
 		fractal->julia_complex.imag = 0;
-	}
+	}		
 }
 
 void	init_img(t_fractals *fractal)
@@ -89,7 +90,6 @@ int	main(int argc, char **argv)
 		ft_error_arg();
 	else
 	{
-		ft_fractol_man();
 		init_fract(argc, argv, &fractal);
 		init_img(&fractal);
 		mlx_mouse_hook(fractal.img.mlx_win, &handle_mouse, &fractal);
@@ -97,6 +97,7 @@ int	main(int argc, char **argv)
 		mlx_hook(fractal.img.mlx_win, 17, 1L << 17, \
 		&destroy_and_free, &fractal);
 		draw_fractal(&fractal);
+		ft_fractol_man();
 		mlx_expose_hook(fractal.img.mlx_win, draw_fractal, &fractal);
 		mlx_loop(fractal.img.mlx_ptr);
 	}

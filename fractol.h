@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:53:39 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:09:49 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:00:21 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <X11/keysym.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-# include <stdbool.h>
+# include <limits.h>
 
 # define KEY_UP 65362
 # define KEY_DOWN 65364
@@ -114,6 +114,7 @@ int			change_julia(int keysym, t_fractals *fractal);
 
 //	Checks
 void		ft_error_arg(void);
+void		ft_error_julia(int argc, char **argv);
 int			is_julia(char **argv);
 int			is_mandelbrot(char **argv);
 int			is_burningship(char **argv);

@@ -6,11 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 02:06:15 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:10:21 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:34:16 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	ft_fractol_man(void)
 {
@@ -74,3 +74,24 @@ void	mouse_up(t_fractals *fractal, int x, int y)
 	fractal->max_y = fractal->center_y + \
 	fractal->med_y / (1 + 0.2) * (1 - ((double)y / HEIGHT));
 }
+
+// void	ft_error_julia(int argc, char **argv)
+// {
+// 	long long int	value1;
+// 	long long int	value2;
+	
+// 	if (argc != 2 && argc != 4)
+// 		ft_error_arg();
+// 	else if (ft_strlen(argv[2]) > 11 || ft_strlen(argv[3]) > 11)
+// 		ft_error_arg();
+// 	else if (!(ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
+// 		ft_error_arg();
+// 	else
+// 	{
+// 		value1 = ft_atoi(argv[2]);
+// 		value2 = ft_atoi(argv[4]);
+// 		if (!(value1 >= INT_MIN && value1 <= INT_MAX) || 
+// 		!(value2 >= INT_MIN && value2 <= INT_MAX))
+// 			ft_error_arg();
+// 	}
+// }

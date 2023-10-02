@@ -6,52 +6,50 @@
 #    By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 02:01:12 by jdufour           #+#    #+#              #
-#    Updated: 2023/09/27 18:11:03 by jdufour          ###   ########.fr        #
+#    Updated: 2023/10/02 12:36:05 by jdufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fract-ol
+NAME = fractol
 
-SRCS = utils.c\
-	checks.c\
-	fractals.c\
-	hooks.c\
-	main.c\
+SRCS = src/utils.c\
+	src/checks.c\
+	src/fractals_iterations.c\
+	src/draw_fractals.c\
+	src/hooks.c\
+	src/main.c\
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:%.c=%.o)
 
 CC = gcc
 
-CFLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
+
+INCLUDES = -I/minilibx-linux -Imlx_linux -O3
+
+LIB = -Lminilibx-linux -lmlx -lXext -lX11 -Llibft -lft -lm
 
 RM = rm -rfv
 
-all: ${NAME}
+all: $(NAME)
 
-# libft:
-# 	make -C libft/
+%.o	:	%.c
+	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
-# minilibx:
-# 	make -C minilibx_linux/
+$(NAME): $(OBJS)
+	make -C minilibx-linux
+	make -C libft
+	$(CC) $(FLAGS) $(INCLUDES) -o $(NAME) $(OBJS) $(LIB)
 
-${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -L minilibx-linux -lmlx -L libft -lft -lXext -lX11 -lm -o ${NAME}
 
-%.o: %.c
-	${CC} -Wall -Wextra -Werror -I/minilibx-linux -Imlx_linux -O3 -c $< -o $@
-
-../minilibx-linux/libmlx.a:
-	make -C mlx_linux
-	
 clean:
-	${RM} ${OBJS}
-	# make clean -C ../minilibx-linux
-	# make clean -C libft
+	$(RM) $(OBJS)
+	make -C minilibx-linux clean
+	make -C libft clean
 
 fclean: clean
-	${RM} ${NAME}
-	# make fclean -C libft
-	# make fclean -C minilibx-linux
+	$(RM) $(NAME)
+	make -C libft fclean
 
 re: fclean all
 

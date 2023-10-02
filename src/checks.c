@@ -6,19 +6,19 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:54:53 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:00:48 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:37:06 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	ft_error_arg(void)
 {
 	ft_putstr_fd("Error arguments.\nusage:  Julia fractals \
-	\t\t fract-ol [\"julia\"] (optionnal : add [real] [imag])\n\tMandelbrot fractal \
-	\t fract-ol [\"mandelbrot\"]\n\tBurning Ship fractal \
-	\t fract-ol [\"burningship\"]\n\tMandelbar Celtic fractal \
-	 fract-ol [\"mandelbar\"]\n", 2);
+	\t\t fractol [\"julia\"] (optionnal : add [real] [imag])\n\tMandelbrot fractal \
+	\t fractol [\"mandelbrot\"]\n\tBurning Ship fractal \
+	\t fractol [\"burningship\"]\n\tMandelbar Celtic fractal \
+	 fractol [\"mandelbar\"]\n", 2);
 	exit(1);
 }
 

@@ -6,11 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:37:05 by jdufour           #+#    #+#             */
-/*   Updated: 2023/09/28 19:11:11 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:36:26 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	destroy_and_free(t_fractals *fractal)
 {
