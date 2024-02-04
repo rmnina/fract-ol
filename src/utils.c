@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 02:06:15 by jdufour           #+#    #+#             */
-/*   Updated: 2023/10/02 14:25:17 by jdufour          ###   ########.fr       */
+/*   Updated: 2024/02/04 19:27:43 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,20 @@ int	ft_error_julia(int argc, char **argv)
 
 	if (argc != 2 && argc != 4)
 		return (0);
-	if (argc == 4 && (ft_strlen(argv[2]) > 11 || ft_strlen(argv[3]) > 11))
-		return (0);
-	if (!(ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
-		return (0);
-	else
+	if (argc == 4)
 	{
-		value1 = ft_atod(argv[2]);
-		value2 = ft_atod(argv[3]);
-		if (!(value1 >= INT_MIN && value1 <= INT_MAX) || \
-		!(value2 >= INT_MIN && value2 <= INT_MAX))
+		if ((ft_strlen(argv[2]) > 11 || ft_strlen(argv[3]) > 11))
 			return (0);
+		if (!(ft_isalldigits(argv[2]) && ft_isalldigits(argv[3])))
+			return (0);
+		else
+		{
+			value1 = ft_atod(argv[2]);
+			value2 = ft_atod(argv[3]);
+			if (!(value1 >= INT_MIN && value1 <= INT_MAX) || \
+			!(value2 >= INT_MIN && value2 <= INT_MAX))
+				return (0);
+		}
 	}
 	return (1);
 }
