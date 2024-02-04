@@ -49,42 +49,41 @@ To **use** fract-ol :
 ./fractol mandelbrot
 ```
 
-![Screenshot from 2024-02-04 19-29-56.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/0551395f-3794-455c-b295-cf98a63dab89/Screenshot_from_2024-02-04_19-29-56.png)
+![Screenshot from 2024-02-04 19-29-56](https://github.com/rmnina/fract-ol/assets/118455014/a8250d85-be04-4ed3-8ca3-c0ca8a2fc274)
+
 
 ```markdown
 ./fractol mandelbar //(appreciation for the details)
 ```
 
-![Screenshot from 2024-02-04 19-30-56.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/882531e7-46c2-4b6b-b285-36d5f5737315/Screenshot_from_2024-02-04_19-30-56.png)
+![Screenshot from 2024-02-04 19-30-56](https://github.com/rmnina/fract-ol/assets/118455014/ecd57900-9fef-40ca-9af7-04dbca4f29c7)
+
 
 ```markdown
 ./fractol burningship
 ```
 
-![Screenshot from 2024-02-04 19-31-49.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/f4b3ece8-7c4e-40fd-9ee3-fe2425b059d1/Screenshot_from_2024-02-04_19-31-49.png)
+![Screenshot from 2024-02-04 19-31-49](https://github.com/rmnina/fract-ol/assets/118455014/163e561c-f76c-4562-8f93-bb881f7d9b2d)
+
 
 ```markdown
 ./fractol julia -0.1 -0.8
 ```
 
-![Screenshot from 2024-02-04 19-34-53.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/07e549e0-7e79-48d7-a98a-e6665b5f26de/Screenshot_from_2024-02-04_19-34-53.png)
+![Screenshot from 2024-02-04 19-34-53](https://github.com/rmnina/fract-ol/assets/118455014/7060426f-1cad-4076-93a4-97d3507da590)
+
 
 And I’ll leave you with a small gallery 😊 (needless to say that I now use my fractol as a litteral background generator lol)
 
-![Screenshot from 2024-02-04 19-36-21.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/ba271c42-2ded-4da4-8e08-53d1e7f6b308/Screenshot_from_2024-02-04_19-36-21.png)
+![Screenshot from 2024-02-04 19-36-21](https://github.com/rmnina/fract-ol/assets/118455014/8fa28ccc-c524-4fa5-9dc8-6a4bb35694d5)
+![Screenshot from 2023-09-27 19-22-18](https://github.com/rmnina/fract-ol/assets/118455014/3f3ead08-7dc3-4cbf-a743-a6df4b6597ed)
+![Screenshot from 2023-09-27 18-24-49](https://github.com/rmnina/fract-ol/assets/118455014/75fc93d6-4295-43fc-b1d4-c74724798234)
+![Screenshot from 2023-09-27 19-13-48](https://github.com/rmnina/fract-ol/assets/118455014/59ee7365-3e04-4b48-8b4a-6214c9c995d1)
+![Screenshot from 2023-09-27 19-22-46](https://github.com/rmnina/fract-ol/assets/118455014/d35b3742-c808-4ca0-ab96-49666c74b186)
+![Screenshot from 2023-09-27 19-02-48](https://github.com/rmnina/fract-ol/assets/118455014/234d14a0-4aec-4105-be45-de1283bd176f)
+![Screenshot from 2023-09-27 19-17-51](https://github.com/rmnina/fract-ol/assets/118455014/eba8b2df-85fb-4298-8b38-1f3f761b28b9)
+![Screenshot from 2023-09-27 19-21-50](https://github.com/rmnina/fract-ol/assets/118455014/26f2b4d9-21bd-4052-9063-5fab6e306711)
+![Screenshot from 2023-09-27 18-31-23](https://github.com/rmnina/fract-ol/assets/118455014/b61e7c29-a776-401a-8a93-abcffa321b0c)
+![Screenshot from 2023-09-27 18-28-16](https://github.com/rmnina/fract-ol/assets/118455014/ed1b169d-ebe1-4324-bca6-0604ba610931)
 
-![Screenshot from 2023-09-27 19-22-18.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/8db2515e-1cb0-4a84-9231-c5d53e216034/Screenshot_from_2023-09-27_19-22-18.png)
-
-![Screenshot from 2023-09-27 18-24-49.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/ed956dbd-83a1-4f79-9fa5-3cc99078f394/Screenshot_from_2023-09-27_18-24-49.png)
-
-![Screenshot from 2023-09-27 19-22-46.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/b75ddcd0-848d-4bc1-8266-35f872e6f1a9/Screenshot_from_2023-09-27_19-22-46.png)
-
-![Screenshot from 2023-09-27 19-02-48.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/0391fa99-f7c8-4706-8ffc-37c8dc54cda1/Screenshot_from_2023-09-27_19-02-48.png)
-
-![Screenshot from 2023-09-27 19-17-51.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/bc76dd9e-1495-493b-9f74-54a7c8d55010/Screenshot_from_2023-09-27_19-17-51.png)
-
-![Screenshot from 2023-09-27 01-39-35.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/1c868bab-62c4-492e-8560-5816a16bbb89/Screenshot_from_2023-09-27_01-39-35.png)
-
-![Screenshot from 2023-09-27 18-27-42.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/87b87b0f-a93d-41cc-81c8-94700ea26a1e/Screenshot_from_2023-09-27_18-27-42.png)
-
-![Screenshot from 2023-09-27 18-28-16.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0374b65b-95ff-4870-9028-1c5e2920bc7b/970450f1-5c7b-44ae-83fb-15fb1aaf0427/Screenshot_from_2023-09-27_18-28-16.png)
+(I'm sorry this is so cool I could go on for days.....)
